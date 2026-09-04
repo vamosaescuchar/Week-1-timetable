@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekly SISO Week 1 Timetable</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #eaf4ff 0%, #f8fbff 45%, #fff7e8 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Pretendard", Arial, sans-serif;
+      color: #1f2a44;
+    }
+
+    .poster {
+      width: 900px;
+      max-width: 92vw;
+      background: #ffffff;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(31, 42, 68, 0.18);
+    }
+
+    .header {
+      padding: 48px 56px 42px;
+      background: linear-gradient(135deg, #1f4f8f, #63b3ed);
+      color: white;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 46px;
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+    }
+
+    .subtitle {
+      margin-top: 14px;
+      font-size: 24px;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding: 28px 56px;
+      background: #f7fbff;
+      border-bottom: 1px solid #e5edf7;
+    }
+
+    .info-card {
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: white;
+      border: 1px solid #dce8f6;
+    }
+
+    .label {
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #4d7fb8;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    .value {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1f2a44;
+    }
+
+    .content {
+      padding: 40px 56px 46px;
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 10px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 18px;
+      bottom: 12px;
+      width: 4px;
+      border-radius: 999px;
+      background: #dbeafe;
+    }
+
+    .item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 26px;
+      padding: 0 0 30px 56px;
+    }
+
+    .item:last-child {
+      padding-bottom: 0;
+    }
+
+    .dot {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #2f80ed;
+      border: 5px solid #ffffff;
+      box-shadow: 0 0 0 3px #dbeafe;
+    }
+
+    .item.food .dot {
+      background: #f59e0b;
+      box-shadow: 0 0 0 3px #fdecc8;
+    }
+
+    .time {
+      font-size: 21px;
+      font-weight: 900;
+      color: #2f5f9f;
+      white-space: nowrap;
+    }
+
+    .text {
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .note {
+      margin-top: 38px;
+      padding: 22px 26px;
+      border-radius: 22px;
+      background: #fff8e6;
+      border: 1px solid #f2dfaa;
+      font-size: 18px;
+      line-height: 1.45;
+      color: #6b4f16;
+    }
+
+    .footer {
+      padding: 22px 56px 30px;
+      text-align: center;
+      font-size: 16px;
+      color: #6b7280;
+      background: #fafafa;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        align-items: flex-start;
+        padding: 20px 0;
+      }
+
+      .header {
+        padding: 36px 28px 32px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .subtitle {
+        font-size: 19px;
+      }
+
+      .info {
+        grid-template-columns: 1fr;
+        padding: 22px 28px;
+      }
+
+      .content {
+        padding: 32px 28px 38px;
+      }
+
+      .item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding-left: 48px;
+      }
+
+      .time {
+        font-size: 19px;
+      }
+
+      .text {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="poster">
+    <section class="header">
+      <div class="badge">Weekly SISO Week 1</div>
+      <h1>Banpo Hangang Picnic<br />& Jamsugyo Festival 🌉🧺</h1>
+      <p class="subtitle">Let’s enjoy a picnic, festival, and Rainbow Fountain together!</p>
+    </section>
+
+    <section class="info">
+      <div class="info-card">
+        <div class="label">Date</div>
+        <div class="value">Sunday, Sep. 6</div>
+      </div>
+
+      <div class="info-card">
+        <div class="label">Meeting Time</div>
+        <div class="value">4:00 PM</div>
+      </div>
+
+      <div class="info-card">
+        <div class="label">Meeting Point</div>
+        <div class="value">Soongsil Univ.</div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="timeline">
+        <div class="item">
+          <div class="dot"></div>
+          <div class="time">16:00 – 16:50</div>
+          <div class="text">Meet at Soongsil Univ. & move to Banpo Hangang Park</div>
+        </div>
+
+        <div class="item food">
+          <div class="dot"></div>
+          <div class="time">17:00 – 18:30</div>
+          <div class="text">Han River picnic with delivery food 🍗🍕</div>
+        </div>
+
+        <div class="item">
+          <div class="dot"></div>
+          <div class="time">18:30 – 20:30</div>
+          <div class="text">Explore the Jamsugyo Festival & food trucks</div>
+        </div>
+
+        <div class="item">
+          <div class="dot"></div>
+          <div class="time">20:30 – 20:50</div>
+          <div class="text">Clean up and move to the Rainbow Fountain viewing spot</div>
+        </div>
+
+        <div class="item">
+          <div class="dot"></div>
+          <div class="time">21:00 – 21:20</div>
+          <div class="text">Watch the Rainbow Fountain & take photos</div>
+        </div>
+      </div>
+
+      <div class="note">
+        The schedule may change slightly depending on the weather, delivery time, and festival situation 😊
+      </div>
+    </section>
+
+    <footer class="footer">
+      Please be on time so we can move together!
+    </footer>
+  </main>
+</body>
+</html>
